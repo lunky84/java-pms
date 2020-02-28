@@ -22,7 +22,7 @@ public class HomeController {
 		
 		model.addAttribute("projectsList", projects);
 		
-		return "home";
+		return "main/home";
 	}
 
 }

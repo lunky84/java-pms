@@ -23,7 +23,7 @@ public class ProjectController {
 		Project aProject = new Project();
 		
 		model.addAttribute("project", aProject);
-		return "new-project";
+		return "projects/new-project";
 	}
 	
 	@PostMapping("/save")
@@ -31,7 +31,7 @@ public class ProjectController {
 		proRepo.save(project);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/new";
+		return "redirect:/new-project";
 	}
 	
 }

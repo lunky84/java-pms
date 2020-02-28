@@ -26,7 +26,7 @@ public class EmployeeController {
 		Employee aEmployee = new Employee();
 		
 		model.addAttribute("employee", aEmployee);
-		return "new-employee";
+		return "employees/new-employee";
 	}
 	
 	@PostMapping("/save")
@@ -34,7 +34,7 @@ public class EmployeeController {
 		proRepo.save(employee);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/new";
+		return "redirect:/new-employee";
 	}
 	
 	@GetMapping("/list")
@@ -43,7 +43,7 @@ public class EmployeeController {
 		
 		model.addAttribute("employeesList", employees);
 		
-		return "employee-list";
+		return "employees/employee-list";
 	}
 	
 }
