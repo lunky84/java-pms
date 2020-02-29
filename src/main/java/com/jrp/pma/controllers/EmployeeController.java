@@ -18,7 +18,7 @@ import com.jrp.pma.entities.Project;
 public class EmployeeController {
 	
 	@Autowired
-	EmployeeRepository proRepo;
+	EmployeeRepository empRepo;
 	
 	@GetMapping("/new")
 	public String displayEmployeeForm(Model model) {
@@ -32,17 +32,17 @@ public class EmployeeController {
 	
 	@PostMapping("/save")
 	public String createEmployee(Employee employee, Model model) {
-		proRepo.save(employee);
+		empRepo.save(employee);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/employees/list";
+		return "redirect:/employees";
 	}
 	
-	@GetMapping("/list")
+	@GetMapping
 	public String displayEmployeesList(Model model) {
 		
 		
-		List<Employee> employees = proRepo.findAll();
+		List<Employee> employees = empRepo.findAll();
 		
 		model.addAttribute("employeesList", employees);
 		

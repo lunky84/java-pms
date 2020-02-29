@@ -40,10 +40,10 @@ public class ProjectController {
 		proRepo.save(project);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/projects/list";
+		return "redirect:/projects";
 	}
 	
-	@GetMapping("/list")
+	@GetMapping
 	public String displayProjectsList(Model model) {
 
 		List<Project> projects = proRepo.findAll();
