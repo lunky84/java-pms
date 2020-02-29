@@ -27,10 +27,6 @@ public class EmployeeController {
 		
 		model.addAttribute("employee", aEmployee);
 		
-		List<Employee> employees = proRepo.findAll();
-		
-		model.addAttribute("employeesList", employees);
-		
 		return "employees/new-employee";
 	}
 	
@@ -39,7 +35,18 @@ public class EmployeeController {
 		proRepo.save(employee);
 		
 		// use a redirect to prevent duplicate submissions
-		return "redirect:/employees/new";
+		return "redirect:/employees/list";
+	}
+	
+	@GetMapping("/list")
+	public String displayEmployeesList(Model model) {
+		
+		
+		List<Employee> employees = proRepo.findAll();
+		
+		model.addAttribute("employeesList", employees);
+		
+		return "employees/list-employees";
 	}
 	
 	
