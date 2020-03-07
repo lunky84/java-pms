@@ -1,5 +1,6 @@
 package com.jrp.pma.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,7 +17,7 @@ import javax.persistence.ManyToMany;
 public class Project {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long projectId;
 	private String name;
 	private String stage; // NOTSTARTED, COMPLETED, INPROGRESS
@@ -84,6 +85,13 @@ public class Project {
 		this.description = description;
 	}
 	
+	// convenience method
+	public void addEmployee(Employee emp) {
+		if (employees==null) {
+			employees = new ArrayList<>();
+		}
+		employees.add(emp);
+	}
 	
 	
 }
