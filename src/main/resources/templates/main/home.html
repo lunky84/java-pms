@@ -15,7 +15,7 @@
 		<h4>Current Projects</h4>
 		<div class="row">
 			<div class="com-md-6">
-				<table class="table tabel-bordered table-striped">
+				<table class="table table-bordered table-striped">
 					<thead class="thead-dark">
 						<tr>
 							<th>Project Name</th>
@@ -32,6 +32,10 @@
 			</div>
 			<div class="col-md-4">
 				<canvas id="myPieChart" height="50" width="50"></canvas>
+				
+				<script>
+					var chartData = "[[${projectStatusCnt}]]"
+				</script>
 			</div>
 		</div>
 	</div>
@@ -41,7 +45,7 @@
 		<h4>Current Employees</h4>
 		<div class="row">
 			<div class="com-md-6">
-				<table class="table tabel-bordered table-striped">
+				<table class="table table-bordered table-striped">
 					<thead class="thead-dark">
 						<tr>
 							<th>First Name</th>
